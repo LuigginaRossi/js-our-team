@@ -27,7 +27,8 @@ const memberList = [
     }
 ]
 
-
+const memberContainerEl = document.querySelector(".member-container");
+console.log(memberContainerEl);
 
 
 // 2)stampare informazioni nella console: creo ciclo:
@@ -37,8 +38,16 @@ for (let i = 0; i < memberList.length; i++) {
 
     console.log(member.fullName, member.role, member.photo);
 
-    // 3) stampo nell'html:
+    // 3) stampo nell'html sotto forma di stringa:
+    // creo container
+    const cardEl = document.createElement( "div" );
+
+    // attribuisco classi:
+    cardEl.classList.add(".card");
+    cardEl.innerHTML = `${member.fullName} <br> ${member.role}<br> <img src=${member.photo}> `;
     
+    //appendo card al container:
+    memberContainerEl.append(cardEl);
 
 }
 	        
